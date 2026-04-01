@@ -2,10 +2,10 @@
   "name": "vehicle-lookup-backend",
   "version": "1.0.0",
   "description": "Vehicle info lookup backend for India RC registry",
-  "main": "dist/server.js",
+  "main": "dist/src/server.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/server.js",
+    "start": "node dist/src/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
   },
   "dependencies": {
