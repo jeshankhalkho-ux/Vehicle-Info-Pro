@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: vehicle-info-backend
+    runtime: node
+    rootDir: vehicle-backend
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: SECRET_KEY
+        value: Jishan15
+      - key: PORT
+        value: 10000
