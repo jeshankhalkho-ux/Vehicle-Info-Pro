@@ -22,3 +22,14 @@ app.listen(PORT, "0.0.0.0", () => {
 });
 
 export default app;
+app.get('/api/pincode/:pin', async (req, res) => {
+  const { pin } = req.params;
+  if (!/^\d{6}$/.test(pin)) return res.status(400).json({ error: 'Invalid PIN' });
+  try {
+    const response = await fetch(`https://api.postalpincode.in/pincode/${pin}`);
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch pincode data' });
+  }
+});
